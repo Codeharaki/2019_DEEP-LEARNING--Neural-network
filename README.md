@@ -1,5 +1,5 @@
 # Text-Classification
-Text Classification using Neural Networks
+ Using neural networks to find a better solution for automatic document classification. 
 ## Built With
 Python 2.7
 
