@@ -49,22 +49,10 @@ for dir in os.listdir(INPUT_DIR):
     labels_index[os.path.dirname(dir)] = dir_inx
     for file in os.listdir(INPUT_DIR + "\\" + dir):
         train_text = ""
-        with codecs.open(INPUT_DIR + "\\" + dir + "\\" + file, "r", encoding="utf-8") as input_file:
-            for line in input_file:
-                line = line.replace("-", " ")
-                line = line.replace(u"—", " ")
-                line = line.replace(u"–", " ")
-                word_list = line.split(" ")
-                for word in word_list:
-                    new_word = ''
-                    letters_list = list(word.lower())
-                    for letter in letters_list:
-                        if letter in S:
-                            new_word += letter
-                    new_word = new_word.strip()
-                    if (len(new_word) and (new_word in word_model.wv.vocab)):
-                        train_text = train_text + new_word + " "
-
+        line = line.replace("-", " ")
+        line = line.replace(u"—", " ")
+        line = line.replace(u"–", " ")
+        word_list = line.split(" ")
         train_text = train_text.strip()
         if len(train_text):
             texts.append(train_text)
